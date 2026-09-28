@@ -115,39 +115,29 @@ function animate() {
 
 animate();
 const botonVolver = document.getElementById('btn-back');
-const contenedor = document.getElementById ('preview-box');
+const contenedor = document.getElementById('preview-box');
 const ventana = document.getElementById('preview-iframe');
-botonVolver.addEventListener('click', function(){
-  document.body.classList.add('animacion-salida');
-  setTimeout(function(){
-    window.history.back();
+if (botonVolver && contenedor && ventana) {
+  const OFFSET_X = 15;
+  const OFFSET_Y = 15;
 
-  }, 500);
-});
-// Margen de seguridad para no tapar el cursor
-const OFFSET_X = 15;
-const OFFSET_Y = 15;
-// 2. Rastreo constante del sensor (Movimiento del ratón)
-botonVolver.addEventListener('mousemove', function(e) {
-  // Activa la visibilidad del marco flotante
-  contenedor.style.display = 'block';
-  // Si la ventana no tiene ruta cargada, asigna el historial previo
-  if (!ventana.src && document.referrer) {
-    ventana.src = document.referrer;
-  }
-  // Telemetría de coordenadas: posiciona el marco según el cursor
-  contenedor.style.left = (e.clientX + OFFSET_X) + 'px';
-  contenedor.style.top = (e.clientY + OFFSET_Y) + 'px';
-});
-// 3. Ocultamiento al salir de la zona de contacto
-botonVolver.addEventListener('mouseleave', function() {
-  contenedor.style.display = 'none';
-});
+  botonVolver.addEventListener('mousemove', function(e) {
+    contenedor.style.display = 'block';
+    if (!ventana.src && document.referrer) {
+      ventana.src = document.referrer;
+    }
+    contenedor.style.left = (e.clientX + OFFSET_X) + 'px';
+    contenedor.style.top = (e.clientY + OFFSET_Y) + 'px';
+  });
 
-// 4. Maniobra de eyección (Clic)
-botonVolver.addEventListener('click', function() {
-  document.body.classList.add('animacion-salida');
-  setTimeout(function() {
-    window.history.back();
-  }, 500);
-});
+  botonVolver.addEventListener('mouseleave', function() {
+    contenedor.style.display = 'none';
+  });
+
+  botonVolver.addEventListener('click', function() {
+    document.body.classList.add('animacion-salida');
+    setTimeout(function() {
+      window.history.back();
+    }, 500);
+  });
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contaminación Ambiental</title>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <canvas id="tendrils-canvas"></canvas>
+
+        <main class="contenido">
+            <div>
+            <h1>Contaminación Ambiental y Manejo de Residuos Sólidos </h1>
+            <h3>La Humanidad a lo largo de la historia ha generado residuos sólidos, los cuales han sido manejados de diferentes maneras, dependiendo de la época y del lugar. Sin embargo, en la actualidad, el manejo inadecuado de los residuos sólidos ha generado un problema ambiental que afecta a la salud humana y al equilibrio ecológico.</h3>
+            </div>
+            <img id="residuos2" src="residuos2.jpg" alt="Contaminación Ambiental" width="500" height="320">
+            <h2><strong>¿Qué es la contaminación causada por los residuos?</strong></h2>
+            <p>La contaminación causada por los residuos es el subproducto no intencionado del consumo y la producción insostenibles, definido como la acumulación descontrolada de residuos sólidos en el medio ambiente (tierra, agua o aire) debido a su eliminación o gestión inadecuada.</p>
+            <p>Esta forma de contaminación implica la liberación de sustancias nocivas y efectos negativos que incluyen:</p>
+            <p><strong>Contaminación del aire:</strong> Emisión de gases de efecto invernadero como el metano desde vertederos y la quema de desechos, así como toxinas antropogénicas que causan problemas respiratorios y alteran el clima. </p>
+                <p><strong>Contaminación del agua y suelo:</strong> Filtración de lixiviados tóxicos, metales pesados y productos químicos que contaminan fuentes de agua potable, acuíferos y ecosistemas terrestres.</p>
+            <p><strong>En la salud humana:</strong> Exposición a patógenos y tóxicos que provocan enfermedades respiratorias, dermatológicas, cáncer, alteraciones hormonales y problemas de desarrollo en poblaciones cercanas a vertederos o zonas de disposición ilegal.</p>
+
+            <h2><strong>Impacto en los ecosistemas y la economía</strong></h2>
+            <p>Cuando los residuos no se gestionan de manera adecuada, también destruyen ecosistemas completos. Los animales pueden confundir plásticos con alimento, los suelos pierden fertilidad y los cuerpos de agua se vuelven impropios para la vida silvestre y para el consumo humano. Además, los costos de limpieza, salud pública y restauración ambiental suelen ser muy altos para las comunidades.</p>
+            <p>Por eso la contaminación por residuos no solo afecta el medio ambiente, sino también la economía local, la calidad de vida y la sostenibilidad de ciudades enteras. En muchas regiones, la recuperación de paisajes contaminados exige años de trabajo y grandes inversiones.</p>
+
+            <h2><strong>Soluciones y manejo responsable de residuos</strong></h2>
+            <p>La reducción, reutilización y reciclaje son estrategias clave para disminuir la cantidad de residuos que terminan en vertederos o en el medio ambiente. También es importante separar desechos orgánicos e inorgánicos, fomentar el compostaje y apoyar políticas públicas que promuevan la educación ambiental.</p>
+            <p>En el hogar, la comunidad y la industria, cada acción cuenta: usar menos productos de un solo uso, elegir materiales reciclables, reparar antes que desechar y apoyar modelos de economía circular. Así se reducen los impactos negativos y se construye una relación más responsable con el planeta.</p>
+
+            <img id="residuos1" src="residuos1.png" alt="Contaminación Ambiental" width="500" height="320">
+            
+            <h2><strong>A continuación podrás profundizar en el tema en distintos ámbitos</strong></h2>
+            
+        </main>
+        <a href="clase1.html">
+              <button type="button">¿Cómo se encuentra Colombia en este tema?</button>
+              <button type="button"></button>
+        </a>
+        
+        <script>
+            const root = document.documentElement;
+            const updateScrollGlow = () => {
+                const maxScroll = root.scrollHeight - window.innerHeight;
+                const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+                root.style.setProperty('--scroll-progress', Math.min(1, Math.max(0, progress)));
+            };
+
+            window.addEventListener('scroll', updateScrollGlow, { passive: true });
+            updateScrollGlow();
+        </script>
+        <script src="index.js"></script>
+    </body>
+</html>

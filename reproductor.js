@@ -9,4 +9,4 @@
 
 const contenedor = document.createElement("div");
 contenedor.textContent = "Aquí irá mi reproductor";
-document.body.appendChild(contenedor);
+document.body.appendChild(contenedor); })
